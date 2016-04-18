@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.flyfinger.wx.oauth.dao.WxUserMapper">
+	
+	<select id="getWxUserByOpenid" resultMap="BaseResultMap" parameterType="java.util.Map">
+		SELECT
+			<include refid="Base_Column_List" />
+		FROM tb_wx_user
+		WHERE openid = #{openid,jdbcType=VARCHAR} LIMIT 1
+	</select>
+	
+	<select id="getWxUserByMd5Openid" resultMap="BaseResultMap" parameterType="java.util.Map">
+		SELECT
+			<include refid="Base_Column_List" />
+		FROM tb_wx_user
+		WHERE md5_openid = #{md5Openid,jdbcType=VARCHAR} LIMIT 1
+	</select>
+</mapper>

@@ -1,0 +1,24 @@
+{
+  "name": "<%= props.name %>",
+  "version": "0.0.1",
+  "description": "<%= props.name %>",
+  "keywords": [
+    "<%= props.name %>"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "fis3": "^3.3.26",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-cache": "^0.4.4",
+    "gulp-exec": "^2.1.2",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-util": "^3.0.7",
+    "imagemin-pngquant": "^4.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.flyfinger.com:project/<%= props.name %>.git"
+  },
+  "author": "hupenghao"
+}

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.flyfinger.wx.oauth.dao.WxUserMapper" >
+  <resultMap id="BaseResultMap" type="com.flyfinger.wx.oauth.model.WxUser" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="openid" property="openid" jdbcType="VARCHAR" />
+    <result column="md5_openid" property="md5Openid" jdbcType="VARCHAR" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="province" property="province" jdbcType="VARCHAR" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="country" property="country" jdbcType="VARCHAR" />
+    <result column="headimgurl" property="headimgurl" jdbcType="VARCHAR" />
+    <result column="created_on" property="createdOn" jdbcType="TIMESTAMP" />
+    <result column="modified_on" property="modifiedOn" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, openid, md5_openid, nickname, sex, province, city, country, headimgurl, created_on, 
+    modified_on
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_wx_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tb_wx_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.flyfinger.wx.oauth.model.WxUser" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tb_wx_user (openid, md5_openid, nickname, 
+      sex, province, city, 
+      country, headimgurl, created_on, 
+      modified_on)
+    values (#{openid,jdbcType=VARCHAR}, #{md5Openid,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, 
+      #{country,jdbcType=VARCHAR}, #{headimgurl,jdbcType=VARCHAR}, #{createdOn,jdbcType=TIMESTAMP}, 
+      #{modifiedOn,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.flyfinger.wx.oauth.model.WxUser" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tb_wx_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="openid != null" >
+        openid,
+      </if>
+      <if test="md5Openid != null" >
+        md5_openid,
+      </if>
+      <if test="nickname != null" >
+        nickname,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="country != null" >
+        country,
+      </if>
+      <if test="headimgurl != null" >
+        headimgurl,
+      </if>
+      <if test="createdOn != null" >
+        created_on,
+      </if>
+      <if test="modifiedOn != null" >
+        modified_on,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="openid != null" >
+        #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="md5Openid != null" >
+        #{md5Openid,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="headimgurl != null" >
+        #{headimgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="createdOn != null" >
+        #{createdOn,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedOn != null" >
+        #{modifiedOn,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.flyfinger.wx.oauth.model.WxUser" >
+    update tb_wx_user
+    <set >
+      <if test="openid != null" >
+        openid = #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="md5Openid != null" >
+        md5_openid = #{md5Openid,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="province != null" >
+        province = #{province,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null" >
+        country = #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="headimgurl != null" >
+        headimgurl = #{headimgurl,jdbcType=VARCHAR},
+      </if>
+      <if test="createdOn != null" >
+        created_on = #{createdOn,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedOn != null" >
+        modified_on = #{modifiedOn,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.flyfinger.wx.oauth.model.WxUser" >
+    update tb_wx_user
+    set openid = #{openid,jdbcType=VARCHAR},
+      md5_openid = #{md5Openid,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      province = #{province,jdbcType=VARCHAR},
+      city = #{city,jdbcType=VARCHAR},
+      country = #{country,jdbcType=VARCHAR},
+      headimgurl = #{headimgurl,jdbcType=VARCHAR},
+      created_on = #{createdOn,jdbcType=TIMESTAMP},
+      modified_on = #{modifiedOn,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

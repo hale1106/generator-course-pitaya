@@ -1,0 +1,72 @@
+@import url(../global.less);
+html,body{
+  height:100%;
+  overflow: hidden;
+  font-family: 'Microsoft Yahei';
+}
+@color:#d90000;
+.width(@value){
+  width:@value/640*100%;
+}
+.height(@value){
+  height:@value/1008*100%;
+}
+.left(@value){
+  left:@value/640*100%;
+}
+.right(@value){
+  right:@value/640*100%;
+}
+.top(@value){
+  top:@value/1008*100%;
+}
+.bottom(@value){
+  bottom:@value/1008*100%;
+}
+
+
+body,html{
+  height:100%;
+  background:red;
+  color:#fff;
+}
+.wrap{
+  h4{
+    font-size:18px;
+    text-align:center;
+    margin:20px auto;
+  }
+  ul{
+    width:90%;
+    margin:0 auto;
+    .name(@n, @i: 1) when (@i =< @n) {
+      @url:'../../images/<%= props.subName %>/p/@{i}.png?__sprite';
+      &.name@{i} {
+        background:url(@url) left center no-repeat;
+        padding-left:15px;
+      }
+      .name(@n, (@i + 1));
+    }
+    li{
+      height:30px;
+      font-size:16px;
+      .name(18);
+      line-height:30px;
+      .box;
+      .pack;
+      .align;
+      b{
+        .flex;
+        display: block;
+        border-top:2px dotted #fff;
+        height:0;
+        margin:0 10px;
+      }
+    }
+  }
+  p{
+    text-align:right;
+    margin-right:20px;
+    font-size:16px;
+  }
+}

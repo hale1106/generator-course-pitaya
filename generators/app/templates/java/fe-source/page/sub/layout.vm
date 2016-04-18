@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+#html()
+    #head()
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link type="text/css" rel="stylesheet" href="../../static/css/<%= props.subName %>/main.less"/>
+        #block("header-content")
+        #end
+        <title>$title</title>
+        #block("header-script")
+        #end
+    #end ##end head
+
+    #body()
+        #block("body_content")
+        This is body.
+        #end
+    #script("../../static/js/common/zepto.js")#end
+    #script("../../static/js/common/dialog.js")#end
+    #block("script_content")
+    #end
+#end ##end bod
+
+#end ##end html

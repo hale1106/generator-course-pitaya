@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="<%= props.name %>">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/" source-path="/webapp"/>
+        <property name="java-output-path" value="/<%= props.name %>/target/classes"/>
+        <property name="context-root" value="<%= props.name %>"/>
+    </wb-module>
+</project-modules>

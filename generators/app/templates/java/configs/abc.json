@@ -1,0 +1,6 @@
+{
+  "type": "java",
+  "version": "0.0.1",
+  "port": "9000",
+  "source":"fe-source"
+}

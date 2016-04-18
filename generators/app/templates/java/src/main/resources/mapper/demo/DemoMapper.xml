@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.flyfinger.blank.dao.DemoMapper" >
+  <resultMap id="BaseResultMap" type="com.flyfinger.blank.model.Demo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="created_on" property="createdOn" jdbcType="TIMESTAMP" />
+    <result column="modified_on" property="modifiedOn" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, name, created_on, modified_on
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from tb_demo
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tb_demo
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.flyfinger.blank.model.Demo" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tb_demo (name, created_on, modified_on
+      )
+    values (#{name,jdbcType=VARCHAR}, #{createdOn,jdbcType=TIMESTAMP}, #{modifiedOn,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.flyfinger.blank.model.Demo" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tb_demo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="createdOn != null" >
+        created_on,
+      </if>
+      <if test="modifiedOn != null" >
+        modified_on,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="createdOn != null" >
+        #{createdOn,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedOn != null" >
+        #{modifiedOn,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.flyfinger.blank.model.Demo" >
+    update tb_demo
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="createdOn != null" >
+        created_on = #{createdOn,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifiedOn != null" >
+        modified_on = #{modifiedOn,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.flyfinger.blank.model.Demo" >
+    update tb_demo
+    set name = #{name,jdbcType=VARCHAR},
+      created_on = #{createdOn,jdbcType=TIMESTAMP},
+      modified_on = #{modifiedOn,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

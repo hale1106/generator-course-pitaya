@@ -1,0 +1,20 @@
+{
+    "title": "欢迎查看 demo 页面",
+    "names":[
+        {"name":"张","score":999},
+        {"name":"李","score":998},
+        {"name":"王","score":997},
+        {"name":"刘","score":996},
+        {"name":"胡","score":995},
+        {"name":"吴","score":994},
+        {"name":"陈","score":993},
+        {"name":"张一","score":992},
+        {"name":"李二","score":991},
+        {"name":"王三","score":990},
+        {"name":"刘四","score":989},
+        {"name":"胡五","score":988},
+        {"name":"吴六","score":987},
+        {"name":"陈七","score":986},
+        {"name":"肖肖肖","score":985}
+    ]
+}

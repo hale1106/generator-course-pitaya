@@ -1,0 +1,27 @@
+{
+  "name": "<%= props.name %>",
+  "version": "0.0.1",
+  "description": "<%= props.name %>",
+  "keywords": [
+    "<%= props.name %>"
+  ],
+  "devDependencies": {
+    "fis3-hook-amd": "~0.1.2",
+    "fis3-jello": "~1.0.2",
+    "fis3-packager-deps-pack": "~0.0.1",
+    "fis3-preprocessor-extlang": "^1.1.7",
+    "fis3-parser-babel": "~1.1.2",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-cache": "^0.4.4",
+    "gulp-clean": "^0.3.2",
+    "gulp-exec": "^2.1.2",
+    "gulp-imagemin": "^2.4.0",
+    "imagemin-pngquant": "^4.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.flyfinger.com:project/<%= props.name %>.git"
+  },
+  "author": "hupenghao",
+  "license": "MIT"
+}

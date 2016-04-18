@@ -1,0 +1,51 @@
+{
+  "name": "generator-course-pitaya",
+  "version": "0.0.1",
+  "description": "pitaya-course",
+  "homepage": "",
+  "author": {
+    "name": "hale",
+    "email": "hale1106@163.com",
+    "url": "https://github.com/hale1106"
+  },
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "",
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^0.22.0",
+    "chalk": "^1.0.0",
+    "yosay": "^1.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^2.1.0",
+    "eslint-config-xo-space": "^0.10.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-line-ending-corrector": "^1.0.1",
+    "gulp-mocha": "^2.0.0",
+    "gulp-nsp": "^2.1.0",
+    "gulp-plumber": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "yeoman-assert": "^2.0.0",
+    "yeoman-test": "^1.0.0"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "env": {
+      "mocha": true
+    }
+  },
+  "repository": "hale1106/generator-course-pitaya",
+  "scripts": {
+    "prepublish": "gulp prepublish",
+    "test": "gulp"
+  },
+  "license": "MIT"
+}
