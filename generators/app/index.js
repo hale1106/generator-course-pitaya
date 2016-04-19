@@ -139,9 +139,9 @@ module.exports = yeoman.Base.extend({
           );
           this.template('java/fe-source/fis-conf.js', props.name + '/fe-source/fis-conf.js');
           this.template('java/fe-source/server.conf', props.name + '/fe-source/server.conf');
-          this.template('java/fe-source/page/contents.vm', props.name + '/fe-source/page/contents.vm');
           this.template('java/fe-source/page/sub/layout.vm', props.name + '/fe-source/page/'+props.subName+'/layout.vm');
           this.template('java/fe-source/page/sub/index.vm', props.name + '/fe-source/page/'+props.subName+'/index.vm');
+          this.template('java/fe-source/page/sub/show.vm', props.name + '/fe-source/page/'+props.subName+'/show.vm');
           this.template('java/configs/package.json', props.name + '/package.json');
           this.template('java/configs/.project', props.name + '/.project');
           this.template('java/configs/deploy.bat', props.name + '/deploy.bat');
@@ -176,6 +176,7 @@ module.exports = yeoman.Base.extend({
           );
           this.template('java/fe-source/page/sub/layout.vm', 'page/'+props.subName+'/layout.vm');
           this.template('java/fe-source/page/sub/index.vm', 'page/'+props.subName+'/index.vm');
+          this.template('java/fe-source/page/sub/show.vm', 'page/'+props.subName+'/show.vm');
         }
       }
     }

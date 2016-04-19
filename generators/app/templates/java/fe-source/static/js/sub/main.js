@@ -23,9 +23,9 @@ Main.prototype = {
       cache:false,
       success:function(res){
         if(res.status === 0){
-          alert('ok');
+          alert('排名显示完成');
         }else{
-          //alert(res.message || 'error');
+          alert(res.message || 'error');
         }
       }
     })
