@@ -8,7 +8,6 @@ var clean = require('gulp-clean');
 var abcpkg = require('./abc.json');
 var _process = require('process');
 var os = require('os');
-var fis3 = require('fis3');
 
 var execOption = {
   options : {
@@ -23,14 +22,12 @@ var execOption = {
 };
 
 var platform = os.type();
-var fis3TempPath = fis3.project.getTempPath();
-var fis3TempPathWin = fis3.project.getTempPath().replace(/\//g,"\\");
 
 //exec命令
-var demoExec = 'rm -rf '+fis3TempPath+'/www ;fis3 release demo;fis3 server start -p '+abcpkg.port+' --type jello;fis3 release demo -w';
-var demoExecWin = 'rd/s/q '+fis3TempPathWin+'\\www & fis3 release demo & fis3 server start -p '+abcpkg.port+' --type jello & fis3 release demo -w';
-var debugExec = 'rm -rf '+fis3TempPath+'/www ;fis3 release debug;fis3 server start -p '+abcpkg.port+' --type jello;fis3 release debug -w';
-var debugExecWin = 'rd/s/q '+fis3TempPathWin+'\\www &fis3 release debug & fis3 server start -p '+abcpkg.port+' --type jello & fis3 release debug -w';
+var demoExec = 'fis3 server clean;fis3 release demo;fis3 server start -p '+abcpkg.port+' --type jello;fis3 release demo -w';
+var demoExecWin = 'fis3 server clean & fis3 release demo & fis3 server start -p '+abcpkg.port+' --type jello & fis3 release demo -w';
+var debugExec = 'fis3 server clean; fis3 release debug;fis3 server start -p '+abcpkg.port+' --type jello;fis3 release debug -w';
+var debugExecWin = 'fis3 server clean & fis3 release debug & fis3 server start -p '+abcpkg.port+' --type jello & fis3 release debug -w';
 var destExec = 'fis3 release -d ./build';
 
 

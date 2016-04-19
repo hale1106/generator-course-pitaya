@@ -7,7 +7,6 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "fis3": "^3.3.26",
     "gulp": "gulpjs/gulp#4.0",
     "gulp-clean": "^0.3.2",
     "gulp-cache": "^0.4.4",
