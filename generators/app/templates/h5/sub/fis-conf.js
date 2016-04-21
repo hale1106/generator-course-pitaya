@@ -14,9 +14,9 @@ fis.match('*.less', {
 });
 
 // 对 CSS 进行图片合并
-/*fis.match('{*.less,*.css}', {
+fis.match('{*.less,*.css}', {
  useSprite: true
- });*/
+ });
 
 fis.match('*.es6', {
   // fis3-parser-babel 插件进行解析
@@ -31,7 +31,7 @@ fis.match(/^\/src\/(.*)/i,{
 
 fis.match('!*.html', {
   useHash: true,
-  domain: 'http://s.flyfinger.com/<%= props.name %>/<%= props.subName %>'
+  domain: 'http://s.flyfinger.com/<%= props.name%>/<%= props.subName %>'
 });
 
 fis.match('{*.js,*.es6}', {
@@ -50,9 +50,9 @@ fis.match('css/(**.png)', {
   release:'images/$1'
 });
 
-/*fis.match('js/common/!*.js',{
+fis.match('{js/common/zepto.js,js/common/rem.js}',{
  packTo:'js/common/aio.js'
- });*/
+});
 
 fis.match('{gulpfile.js,package.json,abc.json,**/node_modules/**,deploy.bat,Gruntfile.js,README.md,.gitignore,gitignore}',{
   release:false
